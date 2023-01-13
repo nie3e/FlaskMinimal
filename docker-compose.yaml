@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    entrypoint: /var/flask/run.sh
+    tty: true
